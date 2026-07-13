@@ -1,0 +1,264 @@
+<html
+  xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+  data-namespace-typo3-fluid="true"
+>
+  <f:layout name="Module" />
+
+  <f:section name="Content">
+    <div class="zt-audit-dashboard">
+      <h1>
+        <f:translate
+          key="LLL:EXT:zt_permissions/Resources/Private/Language/locallang.xlf:module.title"
+        />
+      </h1>
+
+      <h2>
+        <f:translate
+          key="LLL:EXT:zt_permissions/Resources/Private/Language/locallang.xlf:module.flaggedUsers"
+        />
+      </h2>
+      <f:if condition="{flaggedUsers}">
+        <f:then>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>
+                  <f:translate
+                    key="LLL:EXT:zt_permissions/Resources/Private/Language/locallang.xlf:module.column.risk"
+                  />
+                </th>
+                <th>
+                  <f:translate
+                    key="LLL:EXT:zt_permissions/Resources/Private/Language/locallang.xlf:module.column.user"
+                  />
+                </th>
+                <th>
+                  <f:translate
+                    key="LLL:EXT:zt_permissions/Resources/Private/Language/locallang.xlf:module.column.flags"
+                  />
+                </th>
+                <th>
+                  <f:translate
+                    key="LLL:EXT:zt_permissions/Resources/Private/Language/locallang.xlf:module.column.pageScope"
+                  />
+                </th>
+                <th>
+                  <f:translate
+                    key="LLL:EXT:zt_permissions/Resources/Private/Language/locallang.xlf:module.column.combination"
+                  />
+                </th>
+                <th>
+                  <f:translate
+                    key="LLL:EXT:zt_permissions/Resources/Private/Language/locallang.xlf:module.column.rule"
+                  />
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <f:for each="{flaggedUsers}" as="entry">
+                <tr>
+                  <td>
+                    <span class="badge badge-{entry.riskLevel}"
+                      >{entry.riskLevel}</span
+                    >
+                  </td>
+                  <td>{entry.entityLabel} (#{entry.entityId})</td>
+                  <td>
+                    <f:if condition="{entry.isAdmin}"
+                      ><span class="badge badge-secondary"
+                        ><f:translate
+                          key="LLL:EXT:zt_permissions/Resources/Private/Language/locallang.xlf:module.flag.admin" /></span
+                    ></f:if>
+                    <f:if condition="{entry.isSystemMaintainer}"
+                      ><span class="badge badge-secondary"
+                        ><f:translate
+                          key="LLL:EXT:zt_permissions/Resources/Private/Language/locallang.xlf:module.flag.systemMaintainer" /></span
+                    ></f:if>
+                    <f:if condition="{entry.hasDbMount} == 0"
+                      ><span class="badge badge-secondary"
+                        ><f:translate
+                          key="LLL:EXT:zt_permissions/Resources/Private/Language/locallang.xlf:module.flag.noDbMount" /></span
+                    ></f:if>
+                  </td>
+                  <td><code>{entry.pageScope}</code></td>
+                  <td><code>{entry.matchedCombination}</code></td>
+                  <td>
+                    <code>{entry.ruleId}</code><br />
+                    <small>{entry.ruleDescription}</small>
+                  </td>
+                </tr>
+              </f:for>
+            </tbody>
+          </table>
+        </f:then>
+        <f:else>
+          <p>
+            <f:translate
+              key="LLL:EXT:zt_permissions/Resources/Private/Language/locallang.xlf:module.noEntries"
+            />
+          </p>
+        </f:else>
+      </f:if>
+
+      <h2>
+        <f:translate
+          key="LLL:EXT:zt_permissions/Resources/Private/Language/locallang.xlf:module.flaggedGroups"
+        />
+      </h2>
+      <f:if condition="{flaggedGroups}">
+        <f:then>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>
+                  <f:translate
+                    key="LLL:EXT:zt_permissions/Resources/Private/Language/locallang.xlf:module.column.risk"
+                  />
+                </th>
+                <th>
+                  <f:translate
+                    key="LLL:EXT:zt_permissions/Resources/Private/Language/locallang.xlf:module.column.group"
+                  />
+                </th>
+                <th>
+                  <f:translate
+                    key="LLL:EXT:zt_permissions/Resources/Private/Language/locallang.xlf:module.column.combination"
+                  />
+                </th>
+                <th>
+                  <f:translate
+                    key="LLL:EXT:zt_permissions/Resources/Private/Language/locallang.xlf:module.column.rule"
+                  />
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <f:for each="{flaggedGroups}" as="entry">
+                <tr>
+                  <td>
+                    <span class="badge badge-{entry.riskLevel}"
+                      >{entry.riskLevel}</span
+                    >
+                  </td>
+                  <td>{entry.entityLabel} (#{entry.entityId})</td>
+                  <td><code>{entry.matchedCombination}</code></td>
+                  <td>
+                    <code>{entry.ruleId}</code><br />
+                    <small>{entry.ruleDescription}</small>
+                  </td>
+                </tr>
+              </f:for>
+            </tbody>
+          </table>
+        </f:then>
+        <f:else>
+          <p>
+            <f:translate
+              key="LLL:EXT:zt_permissions/Resources/Private/Language/locallang.xlf:module.noEntries"
+            />
+          </p>
+        </f:else>
+      </f:if>
+
+      <h2>
+        <f:translate
+          key="LLL:EXT:zt_permissions/Resources/Private/Language/locallang.xlf:module.adminEvents"
+        />
+      </h2>
+      <f:if condition="{recentAdminEvents}">
+        <f:then>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>
+                  <f:translate
+                    key="LLL:EXT:zt_permissions/Resources/Private/Language/locallang.xlf:module.column.risk"
+                  />
+                </th>
+                <th>
+                  <f:translate
+                    key="LLL:EXT:zt_permissions/Resources/Private/Language/locallang.xlf:module.column.user"
+                  />
+                </th>
+                <th>
+                  <f:translate
+                    key="LLL:EXT:zt_permissions/Resources/Private/Language/locallang.xlf:module.column.action"
+                  />
+                </th>
+                <th>
+                  <f:translate
+                    key="LLL:EXT:zt_permissions/Resources/Private/Language/locallang.xlf:module.column.rule"
+                  />
+                </th>
+                <th>
+                  <f:translate
+                    key="LLL:EXT:zt_permissions/Resources/Private/Language/locallang.xlf:module.column.page"
+                  />
+                </th>
+                <th>
+                  <f:translate
+                    key="LLL:EXT:zt_permissions/Resources/Private/Language/locallang.xlf:module.column.timestamp"
+                  />
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <f:for each="{recentAdminEvents}" as="entry">
+                <tr>
+                  <td>
+                    <span class="badge badge-{entry.riskLevel}"
+                      >{entry.riskLevel}</span
+                    >
+                  </td>
+                  <td>{entry.username} (#{entry.userUid})</td>
+                  <td>{entry.actionType}</td>
+                  <td>
+                    <code>{entry.ruleId}</code><br />
+                    <small>{entry.ruleDescription}</small>
+                  </td>
+                  <td>{entry.pageContext}</td>
+                  <td>
+                    <f:format.date format="d.m.Y H:i"
+                      >@{entry.timestamp}</f:format.date
+                    >
+                  </td>
+                </tr>
+              </f:for>
+            </tbody>
+          </table>
+        </f:then>
+        <f:else>
+          <p>
+            <f:translate
+              key="LLL:EXT:zt_permissions/Resources/Private/Language/locallang.xlf:module.noEntries"
+            />
+          </p>
+        </f:else>
+      </f:if>
+
+      <h2>
+        <f:translate
+          key="LLL:EXT:zt_permissions/Resources/Private/Language/locallang.xlf:module.recentActivity"
+        />
+      </h2>
+      <f:if condition="{recentEntries}">
+        <ul>
+          <f:for each="{recentEntries}" as="entry">
+            <li>
+              <f:format.date format="d.m.Y H:i"
+                >@{entry.timestamp}</f:format.date
+              >
+              - {entry.username} - {entry.actionType} -
+              <span class="badge badge-{entry.riskLevel}"
+                >{entry.riskLevel}</span
+              >
+              <f:if condition="{entry.ruleDescription}">
+                - <small>{entry.ruleDescription}</small>
+              </f:if>
+            </li>
+          </f:for>
+        </ul>
+      </f:if>
+    </div>
+  </f:section>
+</html>

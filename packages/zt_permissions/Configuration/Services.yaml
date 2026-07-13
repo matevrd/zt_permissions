@@ -6,3 +6,16 @@ services:
 
   matevrd\ZtPermissions\:
     resource: "../Classes/*"
+
+  matevrd\ZtPermissions\Command\DebugPermissionsCommand:
+    tags:
+      - name: console.command
+        command: "zt-permissions:debug-permissions"
+
+  matevrd\ZtPermissions\EventListener\BackendLoginAuditListener:
+    tags:
+      - name: event.listener
+        identifier: "zt-permissions/backend-login-audit"
+
+  matevrd\ZtPermissions\Service\SecurityCriticalActionHook:
+    public: true

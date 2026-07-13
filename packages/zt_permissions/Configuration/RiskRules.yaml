@@ -1,0 +1,18 @@
+criticalCombinations:
+  - id: pages-write-beusers-access
+    permissions:
+      pages: write
+      be_users: read
+    riskLevel: hoch
+    description: "Schreibrecht auf Seiten UND mindestens Lesezugriff auf Backend-Benutzer"
+  - id: beusers-write-begroups-write
+    permissions:
+      be_users: write
+      be_groups: write
+    riskLevel: hoch
+    description: "Möglichkeit zur eigenständigen Rechteausweitung"
+  - id: pages-write-only
+    permissions:
+      pages: write
+    riskLevel: mittel
+    description: "Schreibrecht auf Seiten"
