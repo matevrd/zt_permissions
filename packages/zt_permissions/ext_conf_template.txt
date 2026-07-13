@@ -1,0 +1,5 @@
+# cat=basic//10; type=int+; label=Audit-Log Aufbewahrungsfrist (Tage): Anzahl der Tage, nach denen protokollierte Ereignisse in tx_zt_audit_log automatisch gelöscht werden.
+auditLogRetentionDays = 180
+
+# cat=basic//20; type=string; label=Risiko-Regeldatei: Pfad zur YAML-Datei mit den kritischen Rechtekombinationen.
+riskRulesFile = EXT:zt_permissions/Configuration/RiskRules.yaml

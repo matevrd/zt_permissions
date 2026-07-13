@@ -2,9 +2,26 @@
 <xliff version="1.0">
     <file source-language="de" datatype="plaintext" original="messages" date="2026-07-13" product-name="zt_permissions">
         <body>
-            <trans-unit id="extension.title">
-                <source>ZT Permissions</source>
-            </trans-unit>
+            <trans-unit id="extension.title"><source>ZT Permissions</source></trans-unit>
+            <trans-unit id="module.title"><source>Least-Privilege Audit</source></trans-unit>
+            <trans-unit id="module.flaggedUsers"><source>Kritisch eingestufte Benutzer</source></trans-unit>
+            <trans-unit id="module.flaggedGroups"><source>Kritisch eingestufte Benutzergruppen</source></trans-unit>
+            <trans-unit id="module.adminEvents"><source>Protokollierte administrative Zugriffe</source></trans-unit>
+            <trans-unit id="module.recentActivity"><source>Letzte Ereignisse</source></trans-unit>
+            <trans-unit id="module.noEntries"><source>Es liegen keine Einträge vor.</source></trans-unit>
+            <trans-unit id="module.column.risk"><source>Risiko</source></trans-unit>
+            <trans-unit id="module.column.user"><source>Benutzer</source></trans-unit>
+            <trans-unit id="module.column.action"><source>Ereignis</source></trans-unit>
+            <trans-unit id="module.column.page"><source>Seitenkontext</source></trans-unit>
+            <trans-unit id="module.column.timestamp"><source>Zeitpunkt</source></trans-unit>
+            <trans-unit id="module.column.rule"><source>Regel</source></trans-unit>
+            <trans-unit id="module.column.pageScope"><source>Seitenbaumausschnitt</source></trans-unit>
+            <trans-unit id="module.column.combination"><source>Rechtekombination</source></trans-unit>
+            <trans-unit id="module.column.group"><source>Benutzergruppe</source></trans-unit>
+            <trans-unit id="module.column.flags"><source>Merkmale</source></trans-unit>
+            <trans-unit id="module.flag.admin"><source>Administrator</source></trans-unit>
+            <trans-unit id="module.flag.systemMaintainer"><source>System Maintainer</source></trans-unit>
+            <trans-unit id="module.flag.noDbMount"><source>Kein Database Mount</source></trans-unit>
         </body>
     </file>
 </xliff>
