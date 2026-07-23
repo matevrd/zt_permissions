@@ -3,3 +3,6 @@ auditLogRetentionDays = 180
 
 # cat=basic//20; type=string; label=Risiko-Regeldatei: Pfad zur YAML-Datei mit den kritischen Rechtekombinationen.
 riskRulesFile = EXT:zt_permissions/Configuration/RiskRules.yaml
+
+# cat=basic//30; type=options[enforce,log-only]; label=Site-Zugriffskontrolle Modus: "enforce" verweigert Zugriffe ohne Site-Zuordnung, "log-only" protokolliert Verstöße lediglich.
+siteAccessEnforcementMode = enforce

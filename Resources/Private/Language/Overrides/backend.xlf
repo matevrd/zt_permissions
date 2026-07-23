@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="EXT:backend/Resources/Private/Language/locallang.xlf" product-name="zt_permissions">
+        <body>
+            <trans-unit id="login.error.description">
+                <source>Make sure to spell your username and password correctly, including upper/lowercase characters. Please also be sure that your account is assigned to the site you are trying to access.</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

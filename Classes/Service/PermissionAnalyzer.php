@@ -35,12 +35,7 @@ final class PermissionAnalyzer
         }
 
         $isAdmin = (($user['admin'] ?? 0) & 1) === 1;
-
-        $systemMaintainers = array_map(
-            'intval',
-            $GLOBALS['TYPO3_CONF_VARS']['SYS']['systemMaintainers'] ?? []
-        );
-        $isSystemMaintainer = in_array($userUid, $systemMaintainers, true);
+        $isSystemMaintainer = $this->isSystemMaintainer($userUid);
 
         $dbMountPoints = GeneralUtility::intExplode(',', (string)($user['db_mountpoints'] ?? ''), true);
 
@@ -76,6 +71,16 @@ final class PermissionAnalyzer
         $groupData = $this->collectGroupData($allGroupUids);
 
         return ['readTables' => $groupData['readTables'], 'writeTables' => $groupData['writeTables']];
+    }
+
+    public function isSystemMaintainer(int $userUid): bool
+    {
+        $systemMaintainers = array_map(
+            'intval',
+            $GLOBALS['TYPO3_CONF_VARS']['SYS']['systemMaintainers'] ?? []
+        );
+
+        return in_array($userUid, $systemMaintainers, true);
     }
 
     private function collectGroupData(array $groupUids): array

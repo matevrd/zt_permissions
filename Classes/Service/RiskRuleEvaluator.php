@@ -10,11 +10,11 @@ use TYPO3\CMS\Core\Configuration\Loader\YamlFileLoader;
 
 final class RiskRuleEvaluator
 {
-    private ?array $criticalCombinations = null;
     public function __construct(
         private readonly YamlFileLoader $yamlFileLoader,
         private readonly ExtensionConfiguration $extensionConfiguration,
     ) {}
+    private ?array $criticalCombinations = null;
 
     public function evaluate(EffectivePermissions $permissions): array
     {

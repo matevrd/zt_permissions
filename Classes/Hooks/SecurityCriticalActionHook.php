@@ -1,7 +1,8 @@
 <?php
 
-namespace matevrd\ZtPermissions\Service;
+namespace matevrd\ZtPermissions\Hooks;
 
+use matevrd\ZtPermissions\Service\AuditModule;
 use Psr\Http\Message\ServerRequestInterface;
 use TYPO3\CMS\Core\DataHandling\DataHandler;
 
@@ -38,7 +39,10 @@ final class SecurityCriticalActionHook
         string $command,
         string $table,
         int|string $id,
+        mixed $value,
         DataHandler $dataHandler,
+        mixed $pasteUpdate = null,
+        mixed $pasteDatamap = null,
     ): void {
         if (!in_array($table, self::MONITORED_TABLES, true)) {
             return;

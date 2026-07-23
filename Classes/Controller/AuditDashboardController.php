@@ -2,7 +2,7 @@
 
 namespace matevrd\ZtPermissions\Controller;
 
-use matevrd\ZtPermissions\Service\AuditLogRepository;
+use matevrd\ZtPermissions\Domain\Repository\AuditLogRepository;
 use matevrd\ZtPermissions\Service\AuditModule;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;

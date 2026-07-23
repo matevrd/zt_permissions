@@ -1,6 +1,6 @@
 <?php
 
-namespace matevrd\ZtPermissions\Service;
+namespace matevrd\ZtPermissions\Domain\Repository;
 
 use matevrd\ZtPermissions\Domain\Model\AuditLogEntry;
 use TYPO3\CMS\Core\Database\ConnectionPool;
