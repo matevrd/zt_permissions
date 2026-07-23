@@ -16,3 +16,6 @@ services:
     tags:
       - name: event.listener
         identifier: "zt-permissions/backend-login-audit"
+
+  matevrd\ZtPermissions\Service\SecurityCriticalActionHook:
+    public: true
