@@ -1,0 +1,10 @@
+"be_users"
+,"uid","username","admin","usergroup","db_mountpoints"
+,922,"zt_sysmaint",1,"",""
+,923,"zt_no_mount",0,"900",""
+"pages"
+,"uid","pid","title","slug","doktype","perms_user","perms_group","perms_everybody","hidden","deleted"
+,10,0,"Audit Target Page","/audit-target",1,31,27,0,0,0
+"tt_content"
+,"uid","pid","header","CType","colPos","hidden","deleted"
+,960,10,"Unmonitored Element","text",0,0,0

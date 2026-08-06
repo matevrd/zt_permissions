@@ -16,5 +16,3 @@ defined('TYPO3') or die();
         'expirePeriod' => $retentionDays,
     ];
 })();
-
-// https://docs.typo3.org/c/typo3/cms-scheduler/main/en-us/BasicTasks/GarbageCollection.html

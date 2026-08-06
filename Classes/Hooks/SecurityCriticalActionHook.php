@@ -96,7 +96,3 @@ final class SecurityCriticalActionHook
         return (string)($_SERVER['REMOTE_ADDR'] ?? '');
     }
 }
-
-
-// https://docs.typo3.org/m/typo3/reference-coreapi/main/en-us/ApiOverview/Events/Hooks/Index.html
-// https://docs.typo3.org/m/typo3/reference-coreapi/main/en-us/ApiOverview/DataHandler/Database/Index.html
