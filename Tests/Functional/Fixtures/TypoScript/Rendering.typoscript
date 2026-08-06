@@ -1,0 +1,12 @@
+page = PAGE
+page.10 = CONTENT
+page.10 {
+    table = tt_content
+    select {
+        orderBy = sorting
+        where = {#colPos}=0
+    }
+    renderObj = TEXT
+    renderObj.field = header
+    renderObj.wrap = [|]
+}

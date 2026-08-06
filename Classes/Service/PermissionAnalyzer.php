@@ -172,5 +172,4 @@ final class PermissionAnalyzer
 
         return $queryBuilder;
     }
-    // https://docs.typo3.org/m/typo3/reference-coreapi/main/en-us/ApiOverview/Database/DoctrineDbal/RestrictionBuilder/Index.html
 }

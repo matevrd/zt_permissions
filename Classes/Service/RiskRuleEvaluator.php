@@ -102,5 +102,4 @@ final class RiskRuleEvaluator
 
         return $rule;
     }
-    //https://docs.typo3.org/m/typo3/reference-coreapi/main/en-us/ApiOverview/YamlApi/Index.html
 }

@@ -46,5 +46,3 @@ final class PageCacheSiteScopingListener
         );
     }
 }
-
-// https://docs.typo3.org/m/typo3/reference-coreapi/14.3/en-us/ApiOverview/RequestLifeCycle/RequestAttributes/FrontendCacheCollector.html

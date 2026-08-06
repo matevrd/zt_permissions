@@ -1,0 +1,17 @@
+"be_users"
+,"uid","username","admin","usergroup","db_mountpoints"
+,910,"zt_admin_mount",1,"","1"
+,917,"zt_cycle",0,"908","1"
+,919,"zt_both",0,"900","1,2"
+"fe_users"
+,"uid","pid","username","usergroup","disable","deleted"
+,919,0,"zt_fe_same_uid","",0,0
+,920,0,"zt_fe_a","",0,0
+"tx_zt_site_mapping"
+,"uid","pid","user_id","user_type","site_identifier","deleted"
+,930,0,910,"be","main",0
+,938,0,919,"be","main",0
+,939,0,919,"be","site_b",0
+,944,0,919,"fe","site_b",0
+,945,0,920,"fe","main",0
+,946,0,917,"be","main",1

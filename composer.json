@@ -12,6 +12,11 @@
       "matevrd\\ZtPermissions\\": "Classes/"
     }
   },
+  "autoload-dev": {
+    "psr-4": {
+      "matevrd\\ZtPermissions\\Tests\\": "Tests/"
+    }
+  },
   "extra": {
     "typo3/cms": {
       "extension-key": "zt_permissions"

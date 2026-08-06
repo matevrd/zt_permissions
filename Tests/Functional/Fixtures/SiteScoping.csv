@@ -1,0 +1,24 @@
+"pages"
+,"uid","pid","title","slug","doktype","hidden","deleted"
+,1,0,"Main Root","/",1,0,0
+,2,0,"Site B Root","/",1,0,0
+,3,1,"Main Subpage","/sub-a",1,0,0
+,4,2,"Site B Subpage","/sub-b",1,0,0
+,5,0,"Frontend User Storage","/storage",254,0,0
+"fe_groups"
+,"uid","pid","title","hidden","deleted"
+,1,5,"private",0,0
+"fe_users"
+,"uid","pid","username","usergroup","disable","deleted"
+,920,5,"zt_fe_a","1",0,0
+,921,5,"zt_fe_b","1",0,0
+"tt_content"
+,"uid","pid","header","CType","colPos","fe_group","sorting","hidden","deleted"
+,950,3,"MAIN_SHOW_AT_ANY_LOGIN","text",0,"-2",256,0,0
+,951,3,"MAIN_PUBLIC","text",0,"",512,0,0
+,952,3,"MAIN_GROUP_PRIVATE","text",0,"1",768,0,0
+,953,4,"SITEB_SHOW_AT_ANY_LOGIN","text",0,"-2",256,0,0
+"tx_zt_site_mapping"
+,"uid","pid","user_id","user_type","site_identifier","deleted"
+,940,0,920,"fe","main",0
+,941,0,921,"fe","site_b",0
